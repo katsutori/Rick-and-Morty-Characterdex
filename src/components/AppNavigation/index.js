@@ -21,6 +21,11 @@ function AppNavigation() {
         setFormValue('')
     }
 
+    const resetMobileBox = (e) => {
+        setFormValue('')
+        setShow(!show)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         history.push(`/search/${formValue}`)
@@ -54,7 +59,7 @@ function AppNavigation() {
             </div>
             <div className='splash-navigation-mobile'>
                 <div className='mobile-logo-container'>
-                    <Link to='/'><img className='header-logo' alt='logo' src={logo} /></Link>
+                    <Link onClick={resetMobileBox} to='/'><img className='header-logo' alt='logo' src={logo} /></Link>
                 </div>
 
                 <div className='menu-toggle'>{show === false ? <button className='mobile-nav-links  res-margin' onClick={handleMenu}>Menu <FontAwesomeIcon icon={faBars} className='fa-nav-res' /></button>:<button className='mobile-nav-links res-margin' onClick={handleMenu}>Menu <FontAwesomeIcon icon={faCaretSquareDown} className='fa-nav-res' /></button>}</div>
