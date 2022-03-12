@@ -5,7 +5,7 @@ import { getAllCharacters } from './store/character'
 
 import AppNavigation from './components/AppNavigation';
 import Footer from './components/Footer';
-import HomeApp from './components/HomeView';
+import HomeView from './components/HomeView';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -27,7 +27,7 @@ function App() {
       <AppNavigation />
         <Switch>
           <Route path='/' exact={true} >
-            <HomeApp />
+            <HomeView />
           </Route>
         </Switch>
       <Footer />

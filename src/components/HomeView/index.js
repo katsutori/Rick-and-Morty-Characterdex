@@ -3,7 +3,7 @@ import { useDispatch} from 'react-redux'
 
 import './HomeView.css'
 
-const HomeApp = () => {
+const HomeView = () => {
 
     useEffect(() => {
         window.scrollTo({top:0, behavior:'smooth'})
@@ -17,4 +17,4 @@ const HomeApp = () => {
     )
 }
 
-export default HomeApp
+export default HomeView
