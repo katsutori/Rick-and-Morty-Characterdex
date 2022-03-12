@@ -296,4 +296,21 @@
   .delete-recipe-button {
     text-align: left !important;
   }
+
+  .character-roll-container {
+
+    grid-template-columns: 1fr 1fr !important;
+    width: 90% !important;
+
+}
+}
+
+@media screen and (max-width: 440px) {
+  .character-roll-container {
+    grid-template-columns: 1fr !important;
+    width: 90% !important;
+  }
+  .one-roll-bottom {
+    margin-top: -1px;
+  }
 }
