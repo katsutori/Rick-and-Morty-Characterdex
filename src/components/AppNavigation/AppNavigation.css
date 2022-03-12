@@ -302,7 +302,15 @@
     grid-template-columns: 1fr 1fr !important;
     width: 90% !important;
 
-}
+  }
+
+  .one-roll-image {
+    height: 300px !important;
+  }
+
+  .one-roll-bottom {
+    margin-top: -1px;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -312,5 +320,9 @@
   }
   .one-roll-bottom {
     margin-top: -1px;
+  }
+
+  .one-roll-image {
+    height: 300px !important;
   }
 }
