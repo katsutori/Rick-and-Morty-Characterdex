@@ -31,6 +31,12 @@ function AppNavigation() {
         history.push(`/search/${formValue}`)
     }
 
+    const handleMobileSubmit = (e) => {
+        e.preventDefault()
+        setShow(!show)
+        history.push(`/search/${formValue}`)
+    }
+
     return (
         <>
         <div className='main-logged'>
@@ -69,7 +75,7 @@ function AppNavigation() {
 
 
                 {show === true ? <div className='search-form-nav search-mobile'>
-                    <form className='search-from' onSubmit={handleSubmit}>
+                    <form className='search-from' onSubmit={handleMobileSubmit}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} className='fa-nav-res' />
                         <input
                         value={formValue}
