@@ -17,6 +17,10 @@ function AppNavigation() {
         setShow(!show)
     }
 
+    const resetBox = (e) => {
+        setFormValue('')
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         history.push(`/search/${formValue}`)
@@ -27,7 +31,7 @@ function AppNavigation() {
         <div className='main-logged'>
             <div className='main'>
                 <div className='logo-nav'>
-                    <Link to='/'><img className='header-logo' alt='logo' src={logo} /></Link>
+                    <Link onClick={resetBox} to='/'><img className='header-logo' alt='logo' src={logo} /></Link>
                 </div>
                 <div className='search-form-nav'>
                     <form className='search-from' onSubmit={handleSubmit}>
