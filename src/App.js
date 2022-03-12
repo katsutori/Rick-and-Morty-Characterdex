@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getAllCharacters } from './store/character'
 
 import AppNavigation from './components/AppNavigation';
+import SearchView from './components/HomeView/SearchView';
 import Footer from './components/Footer';
 import HomeView from './components/HomeView';
 
@@ -28,6 +29,9 @@ function App() {
         <Switch>
           <Route path='/' exact={true} >
             <HomeView />
+          </Route>
+          <Route path='/search/:id' exact={true}>
+            <SearchView />
           </Route>
         </Switch>
       <Footer />
