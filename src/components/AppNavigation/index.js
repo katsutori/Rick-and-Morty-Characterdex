@@ -23,7 +23,7 @@ function AppNavigation() {
 
     const resetMobileBox = (e) => {
         setFormValue('')
-        setShow(!show)
+        setShow(false)
     }
 
     const handleSubmit = (e) => {
