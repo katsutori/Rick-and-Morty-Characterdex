@@ -8,7 +8,7 @@ export const allCharacters = payload => {
 }
 
 export const getAllCharacters = () => async dispatch => {
-    console.log('henlo world')
+
     async function fetchCharacters(page, characters) {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
         const data = await response.json()

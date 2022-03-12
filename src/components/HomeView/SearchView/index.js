@@ -41,12 +41,12 @@ const SearchView = () => {
 
     let targets;
 
-    if (selected.length) {
+    if (selected?.length) {
         targets = selected.slice(start, end)
     }
 
-    console.log(selected)
-    if (!targets.length) {
+
+    if (!targets?.length) {
         return (
             <div className='category-container'>
                 <h1 className='category-h1'>You search for <span className='category-h1-span'>{id}</span> gotcha nothin.</h1>

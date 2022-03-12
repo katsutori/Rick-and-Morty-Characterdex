@@ -11,9 +11,6 @@ const CharacterRoll = () => {
     const [show, setShow] = useState(true)
 
     const characters = useSelector(state=> state.characterState.entries)
-    console.log(start, end)
-
-
 
     const handleInc = () => {
         setStart(end + 1)
@@ -26,7 +23,7 @@ const CharacterRoll = () => {
     }
 
     const targets = characters.slice(start, end)
-    console.log(targets)
+
     if (!characters) {
         return (
            null
