@@ -1,14 +1,16 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {useSelector} from 'react-redux'
 
 import OneRoll from './OneRoll'
+import pic from '../../../img/rmload.png'
 import './CharacterRoll.css'
 
 const CharacterRoll = () => {
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(48)
     const [show] = useState(true)
+    const [wait, setWait] = useState(false)
 
     const characters = useSelector(state=> state.characterState.entries)
     const {requestInProgress} = useSelector(state => state.characterState)
@@ -22,6 +24,12 @@ const CharacterRoll = () => {
         setStart(start - 49)
         setEnd(end - 49)
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setWait(true)
+        }, 3000)
+    }, [])
 
     const targets = characters.slice(start, end)
 
@@ -37,10 +45,13 @@ const CharacterRoll = () => {
                 <div className='loading-container'>
                     <div className='rm-load'>Characterdex is loading...</div>
                     <div className='lds-dual-ring'></div>
+                    {wait === true ? <div className='rm-load wait'>Hold your horses! There's a lot of characters loading.</div>:<></>}
+                    {wait === true ? <div className='wait-img-container'><img className='wait-img' src={pic}/></div>:<></>}
                 </div>
             </>
         )
     }
+
 
 
     return (
