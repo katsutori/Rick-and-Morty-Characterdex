@@ -11,6 +11,7 @@ const CharacterRoll = () => {
     const [show, setShow] = useState(true)
 
     const characters = useSelector(state=> state.characterState.entries)
+    const {requestInProgress, refreshing} = useSelector(state => state.characterState)
 
     const handleInc = () => {
         setStart(end + 1)
@@ -27,6 +28,12 @@ const CharacterRoll = () => {
     if (!characters) {
         return (
            null
+        )
+    }
+
+    if (!requestInProgress) {
+        return (
+            <div>Loading...</div>
         )
     }
 

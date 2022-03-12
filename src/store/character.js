@@ -34,13 +34,13 @@ export const getAllCharacters = () => async dispatch => {
     })
 }
 
-export const initialState = {entries:[]}
+export const initialState = {entries:[], requestInProgress:false, refreshing:false}
 
 const characterReducer = (state = initialState, action) => {
     let newState
     switch (action.type) {
         case GET_CHARACTERS:
-            return {...state, entries: [...action.payload]}
+            return {...state, entries: [...action.payload], requestInProgress:true}
         default:
             return state
     }
