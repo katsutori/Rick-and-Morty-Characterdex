@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux'
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import OneRoll from '../CharacterRoll/OneRoll';
 
@@ -8,7 +8,7 @@ const SearchView = () => {
     const {id} = useParams()
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(48)
-    const [show, setShow] = useState(true)
+    const [show] = useState(true)
     const characters = useSelector(state=> state.characterState.entries)
     let query = id;
     if (query.includes(' ')) {

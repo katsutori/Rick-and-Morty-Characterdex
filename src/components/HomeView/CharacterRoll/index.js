@@ -8,10 +8,10 @@ import './CharacterRoll.css'
 const CharacterRoll = () => {
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(48)
-    const [show, setShow] = useState(true)
+    const [show] = useState(true)
 
     const characters = useSelector(state=> state.characterState.entries)
-    const {requestInProgress, refreshing} = useSelector(state => state.characterState)
+    const {requestInProgress} = useSelector(state => state.characterState)
 
     const handleInc = () => {
         setStart(end + 1)
@@ -31,11 +31,17 @@ const CharacterRoll = () => {
         )
     }
 
-    if (!requestInProgress) {
+    if (requestInProgress) {
         return (
-            <div>Loading...</div>
+            <>
+                <div className='loading-container'>
+                    <div className='rm-load'>Characterdex is loading...</div>
+                    <div className='lds-dual-ring'></div>
+                </div>
+            </>
         )
     }
+
 
     return (
         <>

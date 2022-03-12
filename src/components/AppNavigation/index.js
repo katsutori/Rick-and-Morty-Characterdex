@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faBars, faCaretSquareDown, faCaretDown, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faBars, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons'
 
 import logo from '../../img/logo.png'
 
@@ -10,18 +10,11 @@ import './AppNavigation.css'
 function AppNavigation() {
     const [formValue, setFormValue] = useState('')
     const [show, setShow] = useState(false)
-    const [cat, setCat] = useState(false)
     const history = useHistory()
 
     const handleMenu = (e) => {
         e.preventDefault()
         setShow(!show)
-        setCat(false)
-    }
-
-    const handleCat = (e) => {
-        e.preventDefault()
-        setCat(!cat)
     }
 
     const handleSubmit = (e) => {

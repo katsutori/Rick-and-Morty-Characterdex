@@ -1,13 +1,10 @@
 
 import React from 'react'
-import {Link} from 'react-router-dom'
 import './OneRoll.css'
 
 
 
 const OneRoll = ({target}) => {
-
-    console.log(target)
 
     return (
         <div className='one-roll-container'>

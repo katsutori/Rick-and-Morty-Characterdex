@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import { useDispatch} from 'react-redux'
 
 import Scroll from './Scroll'
 import CharacterRoll from './CharacterRoll'
