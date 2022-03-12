@@ -77,3 +77,12 @@
 .rollP {
     margin: 3px 0px;
 }
+
+.wait-img-container {
+    text-align: center;
+    margin-top: -10px;
+}
+
+.wait-img {
+    height: 175px;
+}
