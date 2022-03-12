@@ -20,7 +20,6 @@ function AppNavigation() {
     const handleSubmit = (e) => {
         e.preventDefault()
         history.push(`/search/${formValue}`)
-        setFormValue('')
     }
 
     return (
