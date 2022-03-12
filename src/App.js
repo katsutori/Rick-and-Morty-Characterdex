@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAllCharacters } from './store/character'
 
+import AppNavigation from './components/AppNavigation';
+import { AddOperation } from 'three';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,12 +23,12 @@ function App() {
 
   return (
     <BrowserRouter>
-
-      <Switch>
-        <Route path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </Route>
-      </Switch>
+      <AppNavigation />
+        <Switch>
+          <Route path='/' exact={true} >
+            <h1>My Home Page</h1>
+          </Route>
+        </Switch>
     </BrowserRouter>
   );
 }
