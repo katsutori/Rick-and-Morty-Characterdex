@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getAllCharacters } from './store/character'
 
 import AppNavigation from './components/AppNavigation';
-import { AddOperation } from 'three';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,6 +29,7 @@ function App() {
             <h1>My Home Page</h1>
           </Route>
         </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
