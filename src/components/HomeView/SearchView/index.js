@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 
 import OneRoll from '../CharacterRoll/OneRoll';
+import Scroll from '../Scroll'
 
 const SearchView = () => {
     const {id} = useParams()
@@ -55,21 +56,24 @@ const SearchView = () => {
     }
 
     return (
-        <div className='home-container'>
-            <div className='page-buttons'>
-                {start <= 0 ? <button className='scroll-button' disabled={show}>Previous</button>:<button className='scroll-button'  onClick={handleDec}>Previous</button>}
-                {targets.length === 48 ? <button className='scroll-button'  onClick={handleInc}>Next</button>:<button className='scroll-button'  disabled={show}>Next</button>}
+        <>
+            <div className='home-container'>
+                <div className='page-buttons'>
+                    {start <= 0 ? <button className='scroll-button' disabled={show}>Previous</button>:<button className='scroll-button'  onClick={handleDec}>Previous</button>}
+                    {targets.length === 48 ? <button className='scroll-button'  onClick={handleInc}>Next</button>:<button className='scroll-button'  disabled={show}>Next</button>}
+                </div>
+                <div className='character-roll-container'>
+                    {targets.map((target, idx) => (
+                        <OneRoll key={idx} target={target} />
+                    ))}
+                </div>
+                <div className='page-buttons'>
+                    {start <= 0 ? <button className='scroll-button' disabled={show}>Previous</button>:<button className='scroll-button'  onClick={handleDec}>Previous</button>}
+                    {targets.length === 48 ? <button className='scroll-button'  onClick={handleInc}>Next</button>:<button className='scroll-button'  disabled={show}>Next</button>}
+                </div>
             </div>
-            <div className='character-roll-container'>
-                {targets.map((target, idx) => (
-                    <OneRoll key={idx} target={target} />
-                ))}
-            </div>
-            <div className='page-buttons'>
-                {start <= 0 ? <button className='scroll-button' disabled={show}>Previous</button>:<button className='scroll-button'  onClick={handleDec}>Previous</button>}
-                {targets.length === 48 ? <button className='scroll-button'  onClick={handleInc}>Next</button>:<button className='scroll-button'  disabled={show}>Next</button>}
-            </div>
-        </div>
+            <Scroll />
+        </>
     )
 }
 
