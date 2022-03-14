@@ -33,11 +33,13 @@ const SearchView = () => {
     const handleInc = () => {
         setStart(end + 1)
         setEnd(end + 49)
+        window.scrollTo({top:0, behavior:'smooth'})
     }
 
     const handleDec = () => {
         setStart(start - 49)
         setEnd(end - 49)
+        window.scrollTo({top:0, behavior:'smooth'})
     }
 
     let targets;
