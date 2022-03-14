@@ -20,12 +20,14 @@ const SearchView = () => {
 
     const selected = characters?.filter(one => {
         for(let i = 0; i < query.length; i++) {
-            if (one?.name?.toLowerCase().includes(query[i].toLowerCase())) {
-                return one
-            } else if (one?.name?.toLowerCase().includes(query[i].substring(0, 3).toLowerCase())) {
-                return one
-            } else if (one?.name?.toLowerCase().includes(query[i].substring(query[i].length - 3).toLowerCase())) {
-                return one
+            if(query[i] !== ''){
+                if (one?.name?.toLowerCase().includes(query[i].toLowerCase())) {
+                    return one
+                } else if (one?.name?.toLowerCase().includes(query[i].substring(0, 3).toLowerCase())) {
+                    return one
+                } else if (one?.name?.toLowerCase().includes(query[i].substring(query[i].length - 3).toLowerCase())) {
+                    return one
+                }
             }
         }
     })
@@ -56,7 +58,7 @@ const SearchView = () => {
             </div>
         )
     }
-
+    console.log(query)
     return (
         <>
             <div className='home-container'>
